@@ -1,0 +1,17 @@
+<div id="create-tintuc" fxLayout="column" fxLayoutAlign="center start">
+  <div class="full" fxLayout="row" fxLayoutGap="10px">
+    <span class="title">Tiêu Đề: </span>
+    <input type="text" [(ngModel)]="title">
+    <select fxFlex #page (change)="pagesChange(page)" [disabled]="tintucId">
+      <option *ngFor="let p of pages" [selected]="p.value==selectedPage" [value]="p.value" >{{p.name}}</option>
+    </select>
+  </div>
+  <div class="full editor">
+    <ckeditor [(ngModel)]="ckeditorContent" class="content">
+      <ckbutton [name]="'saveButton'" [command]="'saveCmd'" (click)="save($event)"  [label]="'Save Document'"
+        [toolbar]="'clipboard,1'">
+      </ckbutton>
+    </ckeditor>
+  </div>
+  <button (click)="createTintuc()" [disabled]="title==''||ckeditorContent==''">{{tintucId ? 'Save': 'Tạo'}}</button>
+</div>

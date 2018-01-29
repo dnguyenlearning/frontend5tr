@@ -1,0 +1,12 @@
+<div  *ngIf="pendingSanpham.length && !loading" id="pending-post">
+    <slide  *ngFor="let loaisanpham of loaisanphams, let i=index"  [title]="title[i]" [chapnhan]="false" [loaisanphamId]="loaisanpham._id" [time]='10000' ></slide>
+</div>
+<div class="nopost" *ngIf="!pendingSanpham.length && !loading" fxLayout="row" fxLayoutAlign="center center">
+    <h2>Hiện tại chưa có sản phẩm</h2>
+</div >
+<div class="loader" *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+    <img src="assets/images/loader.gif" alt="">
+</div>
+
+
+  

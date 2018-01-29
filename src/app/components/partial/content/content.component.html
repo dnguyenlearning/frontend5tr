@@ -1,0 +1,10 @@
+<div fxLayout="row" id="content" fxLayoutAlign="center center" fxLayoutWrap>
+  <div >
+    <div class="row" *ngFor="let product of products, let i=index" [class.clear]="i%3==0">
+      <each-product [product]="product"></each-product>
+    </div>
+  </div>
+</div>
+
+
+  

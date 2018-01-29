@@ -1,0 +1,17 @@
+<div id="slide" *ngIf="products.length>0 && !loading">
+  <!-- <div class="slide"  [@fadeInOutLeft]='state' fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px"> -->
+  <div class="slide"  [@fadeInOut]='state' (@fadeInOut.start)="animationStart($event)"
+  (@fadeInOut.done)="animationDone($event)" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap.lt-md="0px" fxLayoutGap="10px">
+    <div class="eachProduct" *ngFor="let product of productsShow">
+      <each-product [product]="product"></each-product>
+    </div>
+  </div>
+  <div class="control">
+      <label for="category">{{title}}</label>
+      <button [disabled]="minProduct" class="controlLeft" (click)="changePage('left')">&lt;</button>
+      <button [disabled]="maxProduct" class="controlRight" (click)="changePage('right')">&gt;</button>
+  </div>
+</div>
+<div class="loader" *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+  <img src="assets/images/loader.gif" alt="">
+</div>

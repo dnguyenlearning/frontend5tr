@@ -1,0 +1,25 @@
+<div id="each-product">
+  <div class="view" [class.over1week]="over1week">
+    <img [src]="product.hinhanh[0]" class="image" alt="images">
+    <div class="info" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+      <div fxLayout="column" fxLayoutGap="3px">
+        <span class="ten">{{product.ten}}</span>
+        <span class="xuatxu">__{{product.xuatxu}}</span>
+      </div>
+      <div class="right" fxLayout="column" fxLayoutGap="5px">
+        <span class="time">{{product.created_at|date:'dd/MM/yyyy'}}</span>
+        <span class="author">{{username}}</span>
+      </div>
+    </div>
+    <div *ngIf="!product.chapnhan" class="pending-mode">
+      <span>Chờ Xét Duyệt</span>
+    </div>
+  </div>
+
+  <div *ngIf="!noShowDetail" class="desc" fxLayout="column" fxLayoutAlign="center center">
+    <div class="detail">
+      <a *ngIf="product.chapnhan" [routerLink]="['/sanpham/chitiet/'+ product._id]">Chi tiết</a>
+      <a *ngIf="!product.chapnhan" [routerLink]="['/admin/chitiet/'+ product._id]">Chi tiết</a>
+    </div>
+  </div>
+</div>

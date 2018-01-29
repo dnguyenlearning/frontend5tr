@@ -1,0 +1,21 @@
+<div id="sidebar" fxLayout="row start">
+  <div [class.links]="showLogoHeader" fxLayout="column" fxLayoutGap="50px" >
+    <div class="showLogoHeader" *ngIf="showLogoHeader">
+      <a routerLink="/"><img src="assets/images/brand@2x.png" alt=""></a>
+    </div>
+    <div fxLayout="column" *ngIf="loaisanphams"  fxLayoutGap="20px">
+        <a *ngFor="let loaisanpham of loaisanphams"  routerLink="/sanpham/{{loaisanpham.link}}/{{loaisanpham._id}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" ><i class="fa fa-{{loaisanpham.icon}}" aria-hidden="true"></i> {{loaisanpham.name}}</a>
+    </div>
+    <!-- <div class="search">
+      <select fxFlex #khuvuc (change)="khuvucChanged(khuvuc)">
+        <option value="tatca">Tất Cả Khu Vực</option>
+        <option *ngFor="let tinh of tinhs" [value]="tinh">{{tinh}}</option>
+      </select>
+    </div> -->
+    <div *ngIf="showLogoFooter" class="showLogoFooter" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="15px">
+        <img  src="assets/images/showFooter@2x.png" alt="">
+        <span fxShow fxHide.lt-lg="true" class="text">Let's us take care your Healthy!</span>
+    </div>
+  </div>
+ 
+</div>

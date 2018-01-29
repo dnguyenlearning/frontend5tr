@@ -1,0 +1,90 @@
+@import '~styles.scss';
+
+#header{
+    position: relative;
+    z-index: 11;
+    padding: 0 30px ;
+    @media screen and (max-width:$breakpoint_768) {
+        padding: 0 10px ;
+    }
+    height: 80px;
+    width: 100%;
+    background: $header_bg;
+    color: white;
+    font-weight: bold;
+    a{
+        text-decoration: none;
+        color: white;
+        padding:5px;
+    }
+    a.active{
+        background: white;
+        color: $header_bg;
+        border-radius: 2px;
+    }
+    .right{
+        .loginImg{
+            margin-left: 15px;
+            @media screen and (max-width:$breakpoint_768) {
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+            }
+        }
+        .links{
+            @media screen and (max-width:$breakpoint_768) {
+                display: none;
+            }
+        }
+        .fa-bars{
+            margin-left:10px;
+            font-size: 30px;
+            display: none;
+            cursor: pointer;
+            @media screen and (max-width:$breakpoint_768) {
+                display: block;
+            }
+        }
+    }
+    .left{
+        .brand{
+            img{
+                @media screen and (max-width:$breakpoint_475) {
+                    max-width: 75%;
+                }
+            }
+        }
+    }
+    
+}
+.menu{
+    display: none;
+    border-top: 2px solid white;
+    position: absolute;
+    top:80px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    @media screen and (max-width:$breakpoint_768) {
+        display: block;
+    }
+    a{
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+        background-color: $header_bg;
+        text-align: center;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        &:hover{
+            color: $header_bg;
+            background-color: white;
+        }
+    }
+    a.active{
+        background: white;
+        color: $header_bg;
+        border-radius: 2px;
+    }
+}

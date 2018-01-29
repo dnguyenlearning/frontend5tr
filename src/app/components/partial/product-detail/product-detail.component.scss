@@ -1,0 +1,107 @@
+@import '~styles.scss';
+
+#product-detail{
+    margin: 80px 0;
+    .pending{
+        color: white;
+        background-color:#B91DCB;
+        padding: 10px 35px;
+        font-weight: bold;
+    }
+    .ngay{
+        background: $header_bg;
+        padding: 5px;
+        color: white;
+    }
+    .ngaydang{
+        color: white;
+        font-style: italic;
+        font-weight: bold;
+        
+    }
+    
+    .image{
+        width: 100%;
+        img{
+            @include addBoxShadow('all');
+        }
+        @media screen and (max-width:$breakpoint_575) {
+            margin-top: 30px;
+        }
+        .mainImage{
+            text-align: center;
+            width: 350px;
+            height: 350px;
+            img{
+                width: 350px;
+                height: 350px;
+                @media screen and (max-width:$breakpoint_320) {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+            @media screen and (max-width:$breakpoint_320) {
+                width: 300px;
+                height: 300px;
+            }
+        }
+        .smallImage{
+            width: 100%;
+            margin-top: 10px;
+            img{
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                opacity: 1;
+                &.imgActive{
+                    opacity: 0.5;
+                    border:1px solid black;
+                    box-shadow: 0 0 5px black;
+                }
+            }
+
+        }
+    }
+    .info{
+        .content{
+            font-size: 1.125em;
+            color: gray;
+            .header{
+                font-weight: bold;
+                color: black;
+            }
+            .author{
+                width: fit-content;
+                background-color: cornflowerblue;
+                color:white;
+                font-weight: bold;
+                padding:2px 5px;
+                border-radius: 3px;
+                font-style: italic;
+                font-size: 12px;
+                text-align: center;
+            }
+        }
+        .control{
+            button{
+                cursor: pointer;
+                padding: 10px 25px;
+                border-radius: 7px;
+                color: white;
+                font-weight: bold;
+
+                &:disabled{
+                    background: gray;
+                    cursor:not-allowed;
+                }
+            }
+            .chophep{
+                
+                background-color: $header_bg;
+            }
+            .khongchophep{
+                background-color: #F11515;
+            }
+        }
+    }
+}

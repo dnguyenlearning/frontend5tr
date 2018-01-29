@@ -1,0 +1,6 @@
+<div *ngIf="!loading" id="member-product-detail">
+  <product-detail [chapnhan]="true" *ngIf="product" [product]="product"></product-detail>
+</div>
+<div class="loader" *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+  <img src="assets/images/loader.gif" alt="">
+</div>

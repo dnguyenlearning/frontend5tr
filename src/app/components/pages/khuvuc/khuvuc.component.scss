@@ -1,0 +1,30 @@
+@import '~styles.scss';
+#khuvuc{
+    margin-top:30px;
+    padding: 50px 20px;
+    .update{
+        margin:100px 0 200px;
+
+        width:300px;
+        background: $header_bg;
+        padding:20px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px $header_bg;
+        .back{
+            color:  $header_bg;
+            background-color: white;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            padding:8px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: 0.3s opacity;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+@import '~styles.scss';
+
+#slide{
+    height: 350px;
+    width: 100%;
+    margin-top:100px;
+    position: relative;
+    @include addBoxShadow('all');
+    background: white;
+    @media screen and (max-width:$breakpoint_1025) {
+        height: 280px;
+    }
+    @media screen and (max-width:$breakpoint_575) {
+        height: 250px;
+    }
+    .slide{
+        height: 350px;
+        @media screen and (max-width:$breakpoint_1025) {
+            height: 280px;
+        }
+        @media screen and (max-width:$breakpoint_575) {
+            height: 250px;
+        }
+        
+        .eachProduct{
+            position: relative;
+            height: 300px;
+            width: 300px;
+            padding:20px;
+            box-sizing: border-box;
+            @media screen and (max-width:$breakpoint_1025) {
+                height: 220px;
+                width: 220px;
+            }
+            @media screen and (max-width:$breakpoint_768) {
+                height: 250px;
+                width: 250px;
+            }
+            @media screen and (max-width:$breakpoint_575) {
+                height: 220px;
+                width: 220px;
+            }
+            
+        }
+        
+    }
+    .control *{
+        position: absolute;
+    }
+    .control button{
+        right:-25px;
+        width:50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid gray;
+        cursor: pointer;
+        background-color: white;
+        font-size: 20px;
+        transition: all 0.4s;
+        &:hover{
+            color: white;
+            background: gray;
+        }
+        top:45%;
+        &[disabled]{
+            cursor: not-allowed;
+        }
+    }
+    .control .controlRight{
+        right:-25px;
+        
+    }
+    .control .controlLeft{
+        left: -25px;
+    }
+    .control label{
+        top:-20px;
+        left: 40px;
+        padding:10px 25px;
+        font-weight: bold;
+        font-size: 15px;
+        color: black;
+        background: white;
+        text-transform: uppercase;
+        @include addBoxShadow('all');
+        border-radius: 5px;
+    }
+}

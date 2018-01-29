@@ -1,0 +1,31 @@
+@import '~styles.scss';
+#sanpham-traicay{
+    margin-top: 80px ;
+    .loaderTraiCay{
+        height: 50vh;
+    }
+    .noProduct{
+        margin:100px 0 200px;
+
+        width: 300px;
+        background: $header_bg;
+        padding:15px 10px;
+        border-radius: 20px;
+        color: white;
+        a{
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: capitalize;
+            color: $header_bg;
+            background: white;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            padding: 8px;
+            transition: 0.3s opacity;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+}

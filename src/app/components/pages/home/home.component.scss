@@ -1,0 +1,32 @@
+@import '~styles.scss';
+
+#home {
+    padding: 0 40px;
+    @media screen  and (max-width:$breakpoint_1025){
+        padding: 0 20px;
+    }
+    .noProduct{
+        margin:100px 0 200px;
+        width: 300px;
+        background: $header_bg;
+        padding:15px 10px;
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        a{
+            text-decoration: none;
+            border-radius: 5px;
+            text-transform: capitalize;
+            color: $header_bg;
+            background: white;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            padding: 8px;
+            transition: 0.3s opacity;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+}

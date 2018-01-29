@@ -1,0 +1,52 @@
+@import '~styles.scss';
+
+#solugan{
+    width: 100%;
+    height: 200px;
+    background: url('/assets/images/header@2x.png') center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include addBoxShadow('bottom');
+    .text{
+        text-align: right;
+        position: relative;
+        left: 200px;
+        top: 60px;
+        font-weight: bold;
+        @media screen and (max-width:$breakpoint_768) {
+            left: 100px;
+        }
+        @media screen and (max-width:$breakpoint_575) {
+            left: 20px;
+        }
+        @media screen and (max-width:$breakpoint_475) {
+            left: 0px;
+        }
+
+        h1{
+            margin:5px;
+            font-size: 40px;
+            @media screen and (max-width:$breakpoint_768) {
+                font-size: 35px;
+            }
+            @media screen and (max-width:$breakpoint_575) {
+                font-size: 30px;
+            }
+            @media screen and (max-width:$breakpoint_575) {
+                font-size: 27px;
+            }
+        }
+        p{
+            margin: 0;
+            color: gray;
+            position: relative;
+            left: -100px;
+            @media screen and (max-width: $breakpoint_1025){
+               color: black;
+               font-style: italic;
+               font-weight: bold;
+            }
+        }
+    }
+    
+}

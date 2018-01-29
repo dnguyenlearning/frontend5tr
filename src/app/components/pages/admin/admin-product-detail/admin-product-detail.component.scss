@@ -1,0 +1,53 @@
+@import '~styles.scss';
+
+#admin-product-detail{
+    margin-top: 70px;
+    margin-left: 30px;
+    .control{
+        color: gray;
+        a{
+            cursor: pointer;
+            font-size: 20px;
+        }
+        a.active{
+            color: black;
+            font-weight: bold;
+        }
+    }
+    .taosanpham{
+        margin:80px;
+        .icons{
+            width: 200px;
+            height: auto;
+            background: $header_bg;
+            padding:20px;
+            i{
+                border-radius: 50%;
+                color: black;
+                font-size: 40px;
+                cursor: pointer;
+            }
+            i.active{
+                color: white;
+            }
+            
+        }
+        input{
+            padding:10px 25px;
+            color: black;
+            font-size: 14px;
+            border-radius: 5px;
+            @include addBoxShadow('all');
+        }
+        button{
+            padding:10px 20px;
+            font-size: 18px;
+            color: white;
+            font-weight: bold;
+            background:$header_bg;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+    
+}

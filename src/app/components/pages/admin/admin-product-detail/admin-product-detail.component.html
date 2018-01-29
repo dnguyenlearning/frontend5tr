@@ -1,0 +1,37 @@
+<div *ngIf="!loading" id="admin-product-detail">
+
+  <!-- <div class="control" fxLayout="row" fxLayoutGap="15px">
+    <a [class.active]="mode=='pending'" (click)="mode='pending'">Pending Mode</a>
+    <span>/</span>
+    <a [class.active]="mode=='create'" (click)="mode='create'">Tao San pham</a>
+    <span>/</span>
+    <a [class.active]="mode=='post'" (click)="mode='post'">Tao Bai Viet</a>
+    <span>/</span>
+    <a [class.active]="mode=='loaisanpham'" (click)="mode='loaisanpham'">Tao Loai san pham</a>
+  </div> -->
+  
+
+
+  <!-- <div class="taosanpham" *ngIf="mode=='loaisanpham'">
+    <h3>Tao Loai San Pham</h3>
+    <form fxLayout="row" fxLayoutGap="20px" >
+      <div class="icons" fxLayout="row" fxLayoutGap="15px" fxLayoutWrap>
+          <i *ngFor="let icon of icons" (click)="activeIcon(icon)" [class.active]="icon==selectedIcon" class="fa fa-{{icon}}" aria-hidden="true"></i>
+      </div>
+      <div fxLayout="column" fxLayoutGap="20px">
+        <input type="text" [(ngModel)]="sanpham.ten" name="ten" placeholder="Ten Loai San Pham..">
+        <button (click)="taoSanpham()" [disabled]="!sanpham.ten || !selectedIcon">Tao</button>
+      </div>
+    </form>
+  </div>  -->
+  
+
+  <div *ngIf="mode=='pending'">
+      <product-detail  *ngIf="product" [chapnhan]="false" [product]="product"></product-detail>
+  </div>
+  <!-- <form-create-product *ngIf="mode=='create'"></form-create-product> -->
+</div>
+
+<div class="loader" *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+  <img src="assets/images/loader.gif" alt="">
+</div>

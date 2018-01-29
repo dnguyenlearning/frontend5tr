@@ -1,0 +1,22 @@
+<header [loginState]="showLogin" (showLoginToggle)="changeShowLogin($event)"></header>
+<solugan></solugan>
+<div class="container" fxLayout="row">
+  <sidebar fxFlex="250px" fxFlex.lt-lg="200px" ></sidebar>
+  <div id="thucpham" fxFlex>
+      <router-outlet></router-outlet>
+  </div>
+</div>
+<div *ngIf="user" class="taosanpham">
+  <a routerLink="/sanpham/taosanpham"><img src="assets/images/taosanpham2@2x.png" alt=""></a>
+</div>
+
+<login @login *ngIf="showLogin"></login>
+<flash-messages @goInOut ></flash-messages>
+<footer></footer>
+<div @backdrop class="backdrop" *ngIf="open_modal | async" ></div>
+<div @login class="modal" *ngIf="open_modal | async" fxLayout="row" fxLayoutAlign="center center">
+  <modal-khuvuc></modal-khuvuc>
+</div>
+<div class="openSearch" *ngIf="show_search_icon | async" (click)="openModal()" fxLayout="row" fxLayoutAlign="center center">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</div>

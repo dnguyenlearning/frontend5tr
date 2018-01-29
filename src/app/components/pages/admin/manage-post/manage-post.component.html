@@ -1,0 +1,7 @@
+<div *ngIf="!loading" id="manage-post">
+  <slide  *ngFor="let loaisanpham of loaisanphams, let i=index"  [title]="title[i]" [chapnhan]="true" [loaisanphamId]="loaisanpham._id" [time]='10000' ></slide>
+</div>
+
+<div class="loader" *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+  <img src="assets/images/loader.gif" alt="">
+</div>

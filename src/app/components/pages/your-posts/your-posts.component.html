@@ -1,0 +1,10 @@
+<div id="yourpost" fxLayout="row" fxLayoutAlign="center center">
+  <content *ngIf="products && !loading" [products]="products"></content>
+  <div class="loader" *ngIf="loading" fxLayoutAlign="center center">
+      <img src="assets/images/loader.gif" alt="loader">
+  </div>
+  <div class="nopost" *ngIf="!loading && products.length==0" fxLayout="column" fxLayoutAlign="center center">
+    <h1>No Posts</h1>
+    <a routerLink="/" class="back">Về trang chủ</a>
+  </div>
+</div>

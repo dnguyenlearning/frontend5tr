@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+// $header_bg: #5583A2;
+
+// $header_bg:#236405;
+
+$header_bg:#4C912A;
+$sidebar_bg:white;
+
+
+body{
+    background: #F4F4F4;
+    img{
+        max-width: 100%;
+    }
+    margin: 0;
+    .flashCssSuccess{
+        background: blueviolet;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        font-style: italic;
+        padding:5px 20px;
+        border-radius: 10px;
+    }
+    .flashCssDanger{
+        background: red;
+        color: white;
+        font-size: 15px;
+        font-weight: bold;
+        font-style: italic;
+        padding:5px 20px;
+        border-radius: 10px;
+    }
+    #cke_1_contents{
+        height: 500px !important;
+    }
+    .loader{
+        height: 80vh;
+    }
+   
+}
+
+@mixin addBoxShadow($value){
+    @if($value=='all'){
+        box-shadow: 0 0 5px gray;
+    }@else if ($value="bottom"){
+        box-shadow: 0 1px 5px gray;
+    }
+}
+
+$breakpoint_1370: 1370px;
+$breakpoint_1025: 1025px;
+$breakpoint_992: 992px;
+$breakpoint_768: 768px;
+$breakpoint_575: 575px;
+$breakpoint_475: 475px;
+$breakpoint_375: 375px;
+$breakpoint_320: 320px;
+

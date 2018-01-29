@@ -1,0 +1,53 @@
+@import '~styles.scss';
+#content{
+    padding:30px;
+    text-align: center;
+
+    @media screen and (max-width: $breakpoint_320){
+        padding:30px 0 0 0 ;
+        margin:30px 0;
+    }
+    .row{
+        width: 300px;
+        float: left;
+        height: 300px;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+        @media screen and (max-width: $breakpoint_1370){
+            width: 270px;
+            height: 270px;
+        }
+
+        @media screen and (max-width: $breakpoint_1025){
+            width: 350px;
+            height: 350px;
+        }
+        @media screen and (max-width: $breakpoint_992){
+            width: 325px;
+            height: 325px;
+        }
+        @media screen and (max-width: $breakpoint_768){
+            width: 310px;
+            height: 310px;
+        }
+        @media screen and (max-width: $breakpoint_575){
+            width: 220px;
+            height: 220px;
+        }
+        @media screen and (max-width: $breakpoint_475){
+            float: none;
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+
+    .clear{
+        clear: both;
+        @media screen and (max-width: $breakpoint_1025){
+           clear: none;
+        }
+    }
+
+}

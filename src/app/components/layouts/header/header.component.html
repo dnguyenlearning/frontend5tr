@@ -1,0 +1,33 @@
+<div id="header" fxLayout="row" fxLayoutAlign="space-between center">
+  <div class="left">
+    <a routerLink="/" class="brand">
+      <img src="assets/images/brand@2x.png" alt="">
+    </a>
+  </div>
+
+  
+  <div class="right" fxLayoutAlign="center center" fxLayout="row" >
+    <div class="links" fxLayoutGap="15px" >
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/" >Trang Chủ</a>
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/gioithieu" >Giới Thiệu</a>
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  routerLink="/tintuc">Tin Tức</a>
+        <a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" routerLink="/sanpham">Sán Phẩm</a>
+        <!-- <a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" routerLink="/khuvuc">Khu vực</a> -->
+        <a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" routerLink="/amthuc">Ẩm thực</a>
+    </div>
+    
+    
+    <img class="loginImg" src="assets/images/loginLogo@2x.png" width="30px" height="30px" (click)="showHideLoginForm()" style="cursor:pointer" alt="login">
+    <i class="fa fa-bars" aria-hidden="true" (click)="showHideMenu()"></i>
+  </div>
+</div>
+
+<div @menu class="menu" *ngIf="showMenu">
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/" >Trang Chủ</a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/gioithieu" >Giới Thiệu</a>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  routerLink="/tintuc">Tin Tức</a>
+    <a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" routerLink="/sanpham">Sán Phẩm</a>
+    <!-- <a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" routerLink="/khuvuc">Khu vực</a> -->
+    <a routerLinkActive="active"  [routerLinkActiveOptions]="{exact: true}" routerLink="/amthuc">Ẩm thực</a>
+</div>
+

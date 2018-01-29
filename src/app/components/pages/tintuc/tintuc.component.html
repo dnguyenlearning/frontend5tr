@@ -1,0 +1,40 @@
+<div id="tintuc" *ngIf="!loading && tintucs.length>0" fxLayout="row" fxLayout.lt-sm="column">
+      <div fxFlex="80%" class="content"  fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="20px">
+          <div class="desc" fxLayout="row" fxLayoutAlign="space-between center">
+            <h2  class="title">{{firstTintuc.title}}</h2>
+            <span class="ngay" fxFlexAlign="end">Ngày Đăng:<span class="time"> {{firstTintuc.created_at|date:'dd/MM/yyyy'}}</span></span>
+          </div>
+          <div id="content"></div>
+          <div *ngIf="authServiceLogin.isAdmin()" class="controls" fxLayout="row" fxLayoutGap="15px">
+            <a class="edit" [routerLink]="['/admin/create-tintuc',firstTintuc._id]">Edit</a>
+            <a class="delete" (click)="deleteTintuc()">Delete</a>
+          </div>
+        </div>
+        <div fxHide fxShow.lt-sm="true" class="baiviet">
+          <h3>Bài viết gần đây:</h3>
+        </div>
+        <div fxFlex="20%" class="links" fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="15px">
+          <p *ngFor="let tintuc of tintucs;let i=index">
+            <a (click)="selectedTintuc(tintuc)" fxLayout="row" fxLayoutGap="15px"  fxLayoutAlign="center center" [class.active]="tintuc==firstTintuc">
+              <span fxFlex="25px" class="imgTintuc" >
+                <img [src]="tintuc.imgTintuc" alt="img Tin tuc"> 
+              </span> 
+              <span>
+                  {{tintuc.title}}
+              </span>
+            </a>
+          </p>
+        </div>
+  
+</div>
+<div class="loader" *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+  <img src="assets/images/loader.gif" alt="">
+</div>
+<div *ngIf="!loading && tintucs.length==0" fxLayout="row" fxLayoutAlign="center center">
+  <div class="noTintuc"  fxLayout="column" fxLayoutAlign="center center">
+    <h1>Hiện tại chưa có bài viết</h1>
+    <a routerLink="/" class="back">Về trang chủ</a>
+  </div>
+</div>
+
+

@@ -1,0 +1,57 @@
+@import '~styles.scss';
+
+#sidebar{
+    padding: 50px 30px;
+    position: relative;
+    
+    a{
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        transition: color 0.4s;
+        font-size: 17px;
+        i{
+            font-size: 20px;
+            margin-right: 10px;
+            color: $header_bg;
+        }
+        &:hover{
+            color: gray;
+        }
+        &.active{
+            font-size: 19px;
+            color: $header_bg;
+        }
+    }
+    .links{
+        position: fixed;
+        top: 0;
+        
+    }
+    .showLogoHeader{
+        width: 200px;
+        padding: 10px 20px;
+        background-color: $header_bg;
+        box-sizing: border-box;
+        margin-top: 50px;
+        transition: all 0.5s;
+        @include addBoxShadow('all');
+        @media screen and (max-width: $breakpoint_1025){
+            width: 150px;
+        }
+    }
+    .showLogoFooter{
+        img{
+            width: 50px;
+            height: 50px;
+            @include addBoxShadow('all');
+            border-radius: 50%;
+        }
+        .text{
+            font-size: 18px;
+            width: 50%;
+            font-weight: bold;
+        }
+        
+    }
+}

@@ -1,0 +1,114 @@
+@import '~styles.scss';
+
+#each-product{
+    width: 100%;
+    height: 100%;
+    
+    .view{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        
+        
+        @include addBoxShadow('all');
+        &.over1week{
+            box-shadow: 0 0 10px red;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            
+        }
+        .pending-mode{
+            position: absolute;
+            right:0;
+            top:0;
+            font-size: 14px;
+            font-weight: bold;
+            font-style: italic;
+            color: white;
+            background:  #B91DCB;
+            padding:5px;
+        }
+        .info{
+            position: absolute;
+            height: auto;
+            background-color: white;
+            bottom: 0;
+            width:100%;
+            padding:5px;
+
+            .ten{
+                font-size: 25px;
+                font-weight: bold;
+                font-style: italic;
+                color: black;
+                @media screen and (max-width:$breakpoint_575) {
+                    font-size: 18px;
+                }
+            }
+            .xuatxu{
+                font-weight: bold;
+                font-style: italic;
+                color: gray;
+                @media screen and (max-width:$breakpoint_575) {
+                    font-size: 15px;
+                }
+            }
+            .right{
+                text-align: right;
+                .time{
+                    font-size: 12px;
+                    font-weight: 700;
+                    font-style: italic;
+                    color: gray;
+
+                }
+                .author{
+                    text-align: center;
+                    background-color: $header_bg;
+                    color: white;
+                    font-weight: bold;
+                    font-style: italic;
+                    font-size: 13px;
+                    border-radius: 5px;
+                    padding:5px;
+                    @media screen and (max-width:$breakpoint_575) {
+                        display: none;
+                    }
+
+                }
+            }
+
+        }
+    }
+    
+    .desc{
+        max-width: 100%;
+        max-height: 100%;
+        background-color: white;
+        position: absolute;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom:0;
+        margin:20px;
+        box-sizing: border-box;
+        opacity: 0;
+        transition: opacity 0.5s;
+        &:hover{
+            opacity: 1;
+        }
+        .detail{
+            a{
+                text-decoration: none;
+                padding:12px 25px;
+                background-color: $header_bg;
+                color: white;
+                border-radius: 5px;
+                
+                font-weight: bold;
+            }
+        }
+    }
+}

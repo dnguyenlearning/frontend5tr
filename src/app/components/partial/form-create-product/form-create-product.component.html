@@ -1,0 +1,63 @@
+<div id="form-create-product" fxLayout="row" fxLayoutAlign="center center">
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="50px" fxLayoutGap.lt-lg="20px" fxLayoutGap.lt-md="5px">
+    <div class="form" fxFlex fxFlexOrder="1" fxFlexOrder.lt-sm="2">
+      <form  [formGroup]="productForm" (ngSubmit)="createProduct(productForm, loaisanpham, donvi,xuatxu, khuvuc)" fxLayout="column" fxLayoutGap="15px">
+        <p class="error" *ngIf="errorTaoSanpham">{{errorTaoSanpham}}</p>
+        <div class="fullwidth" fxLayout="row" fxLayout fxLayoutGap="10px">
+            <input fxFlex type="text" [class.invalid]="ten.touched && ten.invalid" formControlName="ten" placeholder="Tên">
+            <input fxFlex type="text" [class.invalid]="sdt.touched && sdt.invalid" formControlName="sdt" placeholder="Số điện thoại">
+        </div>
+
+        <div  class="fullwidth" fxLayout="row" fxLayoutGap="10px">
+          <input type="number" min="0" step="5000" [class.invalid]="gia.touched && gia.invalid" formControlName="gia" fxFlex placeholder="Giá">
+          
+          <select fxFlex #donvi (change)="allowSubmit=true">
+            <option value="donvi">Đơn vị</option>
+            <option *ngFor="let v of donviValue" [ngValue]="v" >{{v}}</option>
+          </select>
+        </div>
+
+        <div class="fullwidth" fxLayout="row" fxLayoutGap="10px">
+          <select fxFlex #khuvuc (change)="allowSubmit=true">
+              <option value="khuvuc">Khu Vực</option>
+              <option *ngFor="let tinh of tinhs" [value]="tinh">{{tinh}}</option>
+          </select>
+
+          <select fxFlex #xuatxu (change)="allowSubmit=true">
+            <option value="xuatxu">Xuất xứ</option>
+            <option *ngFor="let tinh of tinhs" [value]="tinh">{{tinh}}</option>
+          </select>
+          
+          <select fxFlex #loaisanpham (change)="allowSubmit=true">
+            <option value="loaisanpham">Loại sản phẩm</option>
+            <option *ngFor="let sanpham of loaisanphams; let i=index" [value]="sanpham._id">{{titleSelect[i]}}</option>
+          </select>
+        </div>
+
+        <textarea [class.invalid]="mota.touched && mota.invalid" formControlName="mota" cols="30" rows="10">Mô tả sản phẩm</textarea>
+        <button type="submit" [disabled]="productForm.invalid || btnDisabled" >Dang San Pham</button>
+        <div *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+          <img src="assets/images/loader.gif" alt="">
+        </div>
+      </form>
+    </div>
+    <div class="upload" fxFlex fxFlexOrder="2" fxFlexOrder.lt-sm="1" fxFlex.lt-sm="100%" fxLayoutGap="10px" fxLayout="column">
+      <label class="fileContainer">
+        Hình sản phẩm
+        <input type="file" multiple class="custom-file-input" (change)="fileChangeEvent($event)" placeholder="Upload file..." />
+      </label>
+      <p *ngIf="errSize" class="error">Dung lượng ảnh không quá 5MB</p>
+      <p *ngIf="errorUpload" class="error">{{errorUpload}}</p>
+      <p *ngIf="imgPreview.length > 4" class="error"> Số lượng ảnh tối đa 4 Hình </p>
+
+      <div class="hinhanh" *ngIf="imgPreview">
+        <div class="imagePreview" *ngFor="let uploadImage of imgPreview, let i=index">
+            <img  class="images" [src]="uploadImage.src" [class.errImage]="i==positionErr && errSize" [alt]="uploadImage.name">
+            <span  (click)="deleteImage(uploadImage)">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

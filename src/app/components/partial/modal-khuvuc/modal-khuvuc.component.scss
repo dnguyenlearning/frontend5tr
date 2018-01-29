@@ -1,0 +1,39 @@
+@import '~styles.scss';
+
+#modal-khuvuc{
+    padding: 40px;
+    position: relative;
+    img{
+        @include addBoxShadow('all');
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    h3{
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+    select{
+        padding:5px 8px;
+        background: transparent;
+        color: white;
+        font-size: 15px;
+        font-style: italic;
+        border: none;
+        border-bottom: 1px solid white;
+        text-align: center;
+        option{
+            background: $header_bg;
+        }
+    }
+    .close{
+        padding: 5px 10px;
+        background: transparent;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}

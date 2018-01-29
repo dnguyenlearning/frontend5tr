@@ -1,0 +1,81 @@
+<div id="login" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="15px">
+  <!-- <div>
+    <img src="assets/images/loginForm@2x.png" alt="">
+    <div class="content" fxLayout="column" fxLayoutAlign="center center">
+      <div *ngIf="!user" fxLayout="column">
+        <p>Chon login</p>
+        <div class="controls">
+          <img src="assets/images/facebook@2x.png" (click)="signInWithFacebook()" alt="facebook">
+          <img src="assets/images/gmail@2x.png" (click)="signInWithGoogle()" alt="gmail">
+        </div>
+      </div>
+      <div class="userInfo" *ngIf="user" fxLayout="column" fxLayoutGap="5px">
+        <div class="avatar">
+          <img [src]="user.photoUrl">
+        </div>
+        
+
+        <div fxLayout="column" class="info">
+          <span>Name: {{ user.name }}</span>
+          <span>{{ user.email }}</span>
+        </div>
+        <button class="logout" (click)="logout()">Logout</button>
+      </div>
+    </div>
+
+  </div> -->
+  <div class="logo">
+    <img src="assets/images/logoLogin.png" alt="logoLogin">
+  </div>
+  <div class="noUser" *ngIf="!user" fxLayout="column">
+    <span>Vui lòng chọn login</span>
+    <div class="control" fxLayout="row">
+      <div class="facebook" (click)="signInWithFacebook()">
+        <img src="assets/images/f@2x.png" alt="facebook">
+        <span>acebook</span>
+      </div>
+      <div class="google" (click)="signInWithGoogle()">
+        <img src="assets/images/g@2x.png" alt="google">
+        <span>oogle</span>
+      </div>
+    </div>
+  </div>
+  <div class="user" *ngIf="user && !authServiceLogin.isAdmin()" fxLayout="column" >
+    <div class="welcome">
+      <p>Welcome to Greenfood!</p>
+    </div>
+    <div class="link">
+      <a routerLink="/member/your-posts"><i class="fa fa-telegram" aria-hidden="true"></i>Posts Đã Tạo</a>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+        <div class="avatar">
+            <img [src]="user.photoUrl">
+        </div>
+        <div class="info" fxLayout="column" fxLayoutGap="10px">
+          <span class="name">{{(user.provider=='GOOGLE')?user.name: user.firstName+user.lastName}}</span>
+          <span class="method">{{user.provider}}</span>
+          <button class="logout" (click)="logout()">Logout</button>
+        </div>
+    </div>
+  </div>
+  <div class="admin" *ngIf="user && authServiceLogin.isAdmin()" fxLayout="column" fxLayoutGap="0px">
+    <div class="links" fxLayout="column">
+      <a routerLink="/admin/pending-post"><i class="fa fa-telegram" aria-hidden="true"></i>Xét Duyệt Posts</a>
+      <a routerLink="/admin/manage-post"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Quản lý Posts</a>
+      <a routerLink="/admin/create-tintuc"><i class="fa fa-audio-description" aria-hidden="true"></i>Tạo Tin Tức</a>
+      <a routerLink="/member/your-posts"><i class="fa fa-edit" aria-hidden="true"></i>Posts Đã Tạo</a>
+    </div>
+    <div fxLayout="row" fxLayoutGap="10px">
+          <div class="avatar">
+              <img [src]="user.photoUrl">
+          </div>
+          <div class="info" fxLayout="column" fxLayoutGap="5px">
+            <span class="name">{{(user.provider=='GOOGLE')?user.name: user.firstName+user.lastName}}</span>
+            <span class="method">{{user.provider}}</span>
+            <button class="logout" (click)="logout()">Logout</button>
+          </div>
+    </div>
+  </div>
+
+
+</div>

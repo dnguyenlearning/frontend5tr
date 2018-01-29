@@ -1,0 +1,14 @@
+<div id="home" fxLayout="column" fxLayoutAlign="center center" fxFlexLayout="column">
+    <carousel></carousel>
+    <div >
+        <content *ngIf="!loading && products | async" [products]="products | async "></content>
+        <div class="loader" *ngIf="loading" fxLayoutAlign="center center">
+            <img src="assets/images/loader.gif" alt="loader">
+        </div>
+        <div class="noProduct" *ngIf="(products |async ).length==0" fxLayout="column" fxLayoutAlign="center center">
+            <h2>Không tìm thấy sản phẩm phù hợp</h2>
+            <a routerLink="/">Về trang chủ</a>
+        </div>
+    </div>
+    
+</div>

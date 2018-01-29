@@ -1,0 +1,77 @@
+@import '~styles.scss';
+
+#carousel{
+    width: 100%;
+    height: auto;
+    background: white;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+    @media screen and (max-width:$breakpoint_1370) {
+        height: 290px;
+        overflow: hidden;
+    }
+    @media screen and (max-width:$breakpoint_1025) {
+        height: 300px;
+        overflow: hidden;
+    }
+    @media screen and (max-width:$breakpoint_1025) {
+        height: 280px;
+        overflow: hidden;
+    }
+    @media screen and (max-width:$breakpoint_575) {
+        height: 200px;
+        overflow: hidden;
+    }
+    @media screen and (max-width:$breakpoint_475) {
+        height: 170px;
+        overflow: hidden;
+    }
+    @media screen and (max-width:$breakpoint_375) {
+        height: 140px;
+        overflow: hidden;
+    }
+    @media screen and (max-width:$breakpoint_320) {
+       display: none;
+    }
+    
+
+    @include addBoxShadow('all');
+    .carousel{
+        z-index: 1;
+        img{
+            width: 100%;
+        }
+    }
+    
+    
+    .control{
+        
+        button{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid gray;
+            font-size: 25px;
+            color: gray;
+            cursor: pointer;
+            transition: background 0.3s;
+            &:hover{
+                background-color: gray;
+                color: white;
+            }
+            top :40%;
+        }
+        .left{
+            left: 15px;
+        }
+        .right{
+            right: 15px;
+        }
+        button[disabled]{
+            cursor: not-allowed;
+        }
+    }
+}

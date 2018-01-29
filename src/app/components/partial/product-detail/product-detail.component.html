@@ -1,0 +1,49 @@
+<div id="product-detail" fxLayout="column" fxLayoutAlign="center center">
+  <div fxFlexAlign="end" fxLayout="column" fxLayoutGap="20px">
+    <span *ngIf="!chapnhan" class="pending">Pending Mode</span>
+    <small class="ngay"><span class="ngaydang">Ngày đăng:</span> {{product.created_at |date:'dd/MM/yyyy'}}</small>
+  </div>
+  <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="30px">
+    <div fxFlex fxFlex.lt-sm="100%" fxFlexOrder="1" fxFlexOrder.lt-sm="2" class="image" fxLayout="column" fxLayoutAlign="center center" >
+      <div class="mainImage" fxLayoutAlign="center center">
+        <img [src]="selectedImage" [alt]="product.ten">
+      </div>
+      <div class="smallImage" fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="center center">
+        <img (click)="getSelectedImage(img)" [class.imgActive]="selectedImage==img" *ngFor="let img of product.hinhanh" [src]="img" alt="">
+      </div>
+    </div>
+    <div fxFlex fxFlex.lt-sm="100%" fxFlexOrder="2" fxFlexOrder.lt-sm="1" class="info" fxLayout="column" fxLayoutAlign="center start" fxLayoutAlign.lt-sm="center center">
+      <div class="content" fxLayout="row" fxLayoutGap="10px">
+          <div class="header">
+              <p>Tên:</p>
+              <p>Xuất Xứ:</p>
+              <p>Giá:</p>
+              <p>Người Bán:</p>
+              <p>Khu Vực:</p>
+              <p>SDT:</p>
+              <p>Mô Tả</p>
+          </div>
+          <div>
+              <p>{{product.ten}}</p>
+              <p>{{product.xuatxu}}</p>
+              <p>{{product.gia |currency:'VND'}}/{{product.donvi}}</p>
+              
+              <p class="author">{{username}} </p>
+              <p>{{product.khuvuc}}</p>
+              <p >{{product.sdt | formatsdt}}</p>
+              <p >{{product.mota}}</p>
+          </div>
+      </div>
+      <div *ngIf="!chapnhan" class="control">
+        <button [disabled]="btnDisabled" class="chophep" (click)="chophep()">Cho phép</button>
+        <button [disabled]="btnDisabled" class="khongchophep" (click)="khongchophep()">Không cho phép</button>
+      </div>
+      <div *ngIf="authServiceLogin.isAdmin() && expried" class="control">
+        <button [disabled]="btnDisabled" class="khongchophep" (click)="khongchophep()">Xoá</button>
+      </div>
+      <div fxLayout="row" *ngIf="loading">
+        <img src="assets/images/loader.gif" alt="loader">
+      </div>
+    </div>
+  </div>
+</div>

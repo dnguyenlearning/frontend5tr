@@ -1,0 +1,128 @@
+@import '~styles.scss';
+
+#gioithieu{
+    margin-top:30px;
+    padding: 20px 0px 20px 50px;
+    @media screen  and (max-width: $breakpoint_475){
+        padding: 20px 0px 20px 20px;
+    }
+
+    .content{
+        padding-right: 20px;
+    }
+    .desc{
+        width: 100%;
+        .title{
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 50px;
+            padding-bottom: 15px;
+            text-align: left;
+            @media screen  and (max-width:$breakpoint_1025){
+                font-size: 40px;
+            }
+        }
+        .time{
+            font-size: 1.2em;
+            font-weight: bold;
+            font-style: italic;
+            
+            
+        }
+        .ngay{
+            padding-bottom: 2px;
+            border-bottom: 2px solid gray;
+        }
+    }
+    #content{ 
+        p {
+            line-height: 2 !important;
+        }
+    }
+    .controls{
+        .edit,.delete{
+            padding:8px 15px;
+            font-size: 15px;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .edit{
+            background-color: $header_bg;
+        }
+        .delete{
+            background: palevioletred;
+        }
+    }
+    .links{
+        margin-top: 50px;
+        border-left: 2px solid $header_bg;
+        padding-left: 15px;
+        p{margin : 0}
+        a{  
+            padding-bottom: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            text-transform: capitalize;
+            transition: opacity 0.4s;
+            cursor: pointer;
+            &:hover{
+                opacity: 0.5;
+            }
+            
+        }
+        
+        .imgTintuc{
+            
+        }
+        .active{
+            color: $header_bg !important;
+            .time{
+                color: $header_bg !important;
+            }
+        }
+        @media screen  and (max-width:$breakpoint_575){
+           margin-top:20px;
+        }
+    }
+
+    .baiviet{
+        width: fit-content;
+        margin-top: 30px;
+        border-bottom: 2px solid $header_bg;
+        h3{
+            margin-bottom: 5px;
+
+        }
+    }
+}
+
+.noTintuc{
+        margin:150px 0 200px;
+        width:auto;
+        background: $header_bg;
+        padding:20px;
+        border-radius: 20px;
+        box-shadow: 0 2px 5px $header_bg;
+        .back{
+            color:  $header_bg;
+            background-color: white;
+            font-size: 18px;
+            font-weight: bold;
+            font-style: italic;
+            padding:8px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: 0.3s opacity;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+
+}

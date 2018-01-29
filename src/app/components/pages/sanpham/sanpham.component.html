@@ -1,0 +1,4 @@
+
+<div *ngIf="loaisanphams" id="sanpham">
+    <slide  *ngFor="let loaisanpham of loaisanphams, let i=index"  [title]="title[i]" [chapnhan]="true" [loaisanphamId]="loaisanpham._id" [time]='10000' ></slide>
+</div>

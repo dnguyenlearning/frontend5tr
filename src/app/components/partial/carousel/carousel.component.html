@@ -1,0 +1,11 @@
+<div id="carousel">
+    <div class="carousel" dragScroll drag-scroll-y-disabled="true" scrollbar-hidden="true" (reachesLeftBound)="leftBoundStat($event)"
+        (reachesRightBound)="rightBoundStat($event)" #nav>
+        <img *ngFor="let image of imagelist" [src]="image" (click)="clickItem(image)" />
+    </div>
+    <div class="control">
+        <button [disabled]="leftNavDisabled" class="left" (click)="moveLeft()">&lt;</button>
+        <button [disabled]="rightNavDisabled" class="right" (click)="moveRight()">&gt;</button>
+    </div>
+</div>
+
