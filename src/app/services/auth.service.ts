@@ -19,9 +19,10 @@ export class AuthServiceLogin {
     return this.http.post(this.backendUrl+'api/users/authenticate',user,{headers:headers})
       .map(res=>res.json());
   }
-  storeUserData(token,userId, chucvu){
+  storeUserData(token,userId,username,chucvu){
     localStorage.setItem('greenfood_token',token);
     localStorage.setItem('greenfood_userId',userId);
+    localStorage.setItem('greenfood_username',username);
     this.userToken=token;
     this.userId=userId;
     this.chucvu=chucvu;
@@ -60,6 +61,7 @@ export class AuthServiceLogin {
     this.userId=null;
     localStorage.removeItem('greenfood_userId');
     localStorage.removeItem('greenfood_token');
+    localStorage.removeItem('greenfood_username');
     this.chucvu=null;
   }
 }

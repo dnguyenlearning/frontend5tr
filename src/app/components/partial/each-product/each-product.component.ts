@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class EachProductComponent implements OnInit,OnDestroy {
   @Input('product') product:any;
-  username:string;
+  // username:string;
   over1week:boolean=false;
   userNameSubscription:Subscription;
   noShowDetail:boolean=false;
@@ -38,17 +38,17 @@ export class EachProductComponent implements OnInit,OnDestroy {
         }
     }
 
-    this.userNameSubscription=this.authServiceLogin.getUsernameWithPostId(this.product.nguoidang).subscribe(data=>{
-      if(data.success){
-        this.username=data.username;
-      }else{
-        return false;
-      }
-    },
-    (err:Response)=>{
-      return false;
+    // this.userNameSubscription=this.authServiceLogin.getUsernameWithPostId(this.product.nguoidang).subscribe(data=>{
+    //   if(data.success){
+    //     this.username=data.username;
+    //   }else{
+    //     return false;
+    //   }
+    // },
+    // (err:Response)=>{
+    //   return false;
       
-    })
+    // })
   }
 
   ngOnDestroy(){

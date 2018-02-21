@@ -28,6 +28,10 @@
             width: 300px;
             padding:20px;
             box-sizing: border-box;
+            @media screen and (max-width:$breakpoint_1280) {
+                height: 250px;
+                width: 250px;
+            }
             @media screen and (max-width:$breakpoint_1025) {
                 height: 220px;
                 width: 220px;

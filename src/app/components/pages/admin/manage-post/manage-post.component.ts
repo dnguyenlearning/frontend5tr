@@ -14,7 +14,7 @@ import { FlashMessagesService } from 'angular2-flash-messages/module/flash-messa
 export class ManagePostComponent implements OnInit,OnDestroy {
   loaisanphams:any=[];
   loading:boolean=true;
-  title=['Rau Sạch', 'Trái Cây', 'Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay'];
+  title=['Rau Sạch', 'Trái Cây', 'Gia Súc Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay','Nước Giải Khát'];
   getSanphamSubscription:Subscription;
   constructor(
     private loaisanphamService:LoaisanphamService,

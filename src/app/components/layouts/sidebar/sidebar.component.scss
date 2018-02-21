@@ -1,9 +1,9 @@
 @import '~styles.scss';
 
 #sidebar{
-    padding: 50px 30px;
     position: relative;
-    
+    padding: 30px 20px;
+    text-align: left;
     a{
         text-decoration: none;
         color: black;
@@ -12,7 +12,7 @@
         font-size: 17px;
         i{
             font-size: 20px;
-            margin-right: 10px;
+            margin-right: 5px;
             color: $header_bg;
         }
         &:hover{
@@ -29,16 +29,14 @@
         
     }
     .showLogoHeader{
-        width: 200px;
-        padding: 10px 20px;
+        width: 170px;
         background-color: $header_bg;
         box-sizing: border-box;
         margin-top: 50px;
         transition: all 0.5s;
         @include addBoxShadow('all');
-        @media screen and (max-width: $breakpoint_1025){
-            width: 150px;
-        }
+
+        
     }
     .showLogoFooter{
         img{

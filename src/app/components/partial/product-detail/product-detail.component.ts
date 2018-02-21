@@ -20,7 +20,7 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   btnDisabled:boolean=false;
   loading:boolean=false;
 
-  getUsernameSubscription:Subscription;
+  // getUsernameSubscription:Subscription;
   chophepSubscription:Subscription;
   khongchophepSubscription:Subscription;
   constructor(
@@ -41,22 +41,20 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
 
     this.selectedImage=this.product['hinhanh'][0];
-    this.getUsernameSubscription=this.authServiceLogin.getUsernameWithPostId(this.product['nguoidang']).subscribe(data=>{
-      if(data.success){
-        this.username=data.username;
-      }else{
-        return false;
-      }
-    },
-    (err:Response)=>{
-      return false;
-    })
+    // this.getUsernameSubscription=this.authServiceLogin.getUsernameWithPostId(this.product['nguoidang']).subscribe(data=>{
+    //   if(data.success){
+    //     this.username=data.username;
+    //   }else{
+    //     return false;
+    //   }
+    // },
+    // (err:Response)=>{
+    //   return false;
+    // })
   }
 
   ngOnDestroy(){
-    if(this.getUsernameSubscription){
-      this.getUsernameSubscription.unsubscribe();
-    }
+    
     if(this.chophepSubscription){this.chophepSubscription.unsubscribe();}
     if(this.khongchophepSubscription){this.khongchophepSubscription.unsubscribe();}
   }

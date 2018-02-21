@@ -1,21 +1,31 @@
-import { KHUVUC_CHANGED, GETLIST_PRODUCTS, GETLIST_PRODUCT_GIACAM, GETLIST_PRODUCT_THUYSAN, GETLIST_PRODUCT_THUCPHAMCHAY, GETLIST_PRODUCT_TRAICAY, GETLIST_PRODUCT_RAUSACH, GETLIST_SANPHAM_PAGE, GET_SANPHAMSHOW, CHANGE_PAGE, OPEN_MODAL, SHOW_SEARCH_ICON } from './../actions/actions';
+import { KHUVUC_CHANGED, GETLIST_PRODUCTS, GETLIST_PRODUCT_GIACAM, GETLIST_PRODUCT_THUYSAN, GETLIST_PRODUCT_THUCPHAMCHAY, GETLIST_PRODUCT_TRAICAY, GETLIST_PRODUCT_RAUSACH, GETLIST_SANPHAM_PAGE, GET_SANPHAMSHOW, CHANGE_PAGE, OPEN_MODAL, SHOW_SEARCH_ICON, GETLIST_PRODUCT_NUOCGIAIKHAT } from './../actions/actions';
 import * as _ from 'lodash';
 export interface IAppState{
     khuvuc:string;
     productsHome:any[];
     filterProductsHome:any[];
+
     giacamProducts:any[];
     giacamProductsFilter:any[];
+
     thuysanProducts:any[];
     thuysanProductsFilter:any[];
+
     rausachProducts:any[];
     rausachProductsFilter:any[];
+
     traicayProducts:any[];
     traicayProductsFilter:any[];
+
     thucphamchayProducts:any[];
     thucphamchayProductsFilter:any[];
+
+    nuocgiaikhatProducts:any[];
+    nuocgiaikhatProductsFilter:any[];
+
     sanphamProducts:any[];
     sanphamProductsFilter:any[];
+    
     sanphamShow:any[];
     change_page:string;
     open_modal:boolean;
@@ -36,6 +46,8 @@ export const INITIAL_STATE:IAppState={
     thucphamchayProductsFilter:[],
     traicayProducts:[],
     traicayProductsFilter:[],
+    nuocgiaikhatProducts:[],
+    nuocgiaikhatProductsFilter:[],
     sanphamProducts:[],
     sanphamProductsFilter:[],
     sanphamShow:[],
@@ -66,6 +78,7 @@ export function rootReducer(state:IAppState,action):IAppState{
             let rausachStartProducts=[...state.rausachProducts];
             let thucphamchayStartProducts=[...state.thucphamchayProducts];
             let traicayStartProducts=[...state.traicayProducts];
+            let nuocgiaikhatStartProducts=[...state.nuocgiaikhatProducts]
             let sanphamStartProducts=[...state.sanphamProducts];
             let khuvuc=action.khuvuc;
             return {...state,khuvuc:khuvuc , 
@@ -75,7 +88,8 @@ export function rootReducer(state:IAppState,action):IAppState{
                 thucphamchayProductsFilter:filterProducts(state,khuvuc,thucphamchayStartProducts),
                 traicayProductsFilter:filterProducts(state,khuvuc,traicayStartProducts),
                 rausachProductsFilter:filterProducts(state,khuvuc,rausachStartProducts),
-                sanphamProductsFilter:filterProducts(state,khuvuc,sanphamStartProducts)
+                nuocgiaikhatProductsFilter:filterProducts(state,khuvuc,nuocgiaikhatStartProducts),
+                sanphamProductsFilter:filterProducts(state,khuvuc,sanphamStartProducts),
             };
         case GETLIST_PRODUCTS: 
             let beginProductsHome=action.listProducts;
@@ -106,6 +120,11 @@ export function rootReducer(state:IAppState,action):IAppState{
             let beginProductsRausach=action.listProducts;
             return {...state, rausachProducts:beginProductsRausach,
                 rausachProductsFilter:filterProducts(state,state.khuvuc,beginProductsRausach),
+            }
+        case GETLIST_PRODUCT_NUOCGIAIKHAT:
+            let beginProductsNuocgiaikhat=action.listProducts;
+            return {...state, nuocgiaikhatProducts:beginProductsNuocgiaikhat,
+                nuocgiaikhatProductsFilter:filterProducts(state,state.khuvuc,beginProductsNuocgiaikhat),
             }
         case GETLIST_SANPHAM_PAGE:
             let beginSanphamPage=action.listProducts;

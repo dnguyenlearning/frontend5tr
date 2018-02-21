@@ -25,11 +25,18 @@
 
 .taosanpham{
     position: fixed;
-    top:45%;
+    top:43%;
     left: 0;
+    .tao{
+        img{
+            cursor: pointer;
+        }
+    }
     img{
         max-width: 85%;
-        cursor: pointer;
+    }
+    .hotline{
+      margin-top: 10px;
     }
 }
 

@@ -78,6 +78,14 @@ import { TintucService } from './services/tintuc.service';
 import { ThucphamchayComponent } from './components/pages/sanpham/thucphamchay/thucphamchay.component';
 import { YourPostsComponent } from './components/pages/your-posts/your-posts.component';
 
+
+
+import {NgRedux, NgReduxModule} from 'ng2-redux';
+import { ModalKhuvucComponent } from './components/partial/modal-khuvuc/modal-khuvuc.component';
+import { NuocgiaikhatComponent } from './components/pages/sanpham/nuocgiaikhat/nuocgiaikhat.component';
+
+
+
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'sanpham', component:SanphamComponent},
@@ -95,6 +103,7 @@ const routes: Routes = [
   {path:'sanpham/taosanpham', component:CreateProductComponent , canActivate:[AuthGuard]},
   {path:'sanpham/chitiet/:id', component:MemberProductDetailComponent},
   {path:'sanpham/rausach/:id', component:RausachComponent},
+  {path:'sanpham/nuocgiaikhat/:id', component:NuocgiaikhatComponent},
   {path:'sanpham/traicay/:id', component:TraicayComponent},
   {path:'sanpham/giacam/:id', component:GiacamComponent},
   {path:'sanpham/thuysan/:id', component:ThuysanComponent},
@@ -118,8 +127,6 @@ export function provideConfig() {
   return config;
 }
 
-import {NgRedux, NgReduxModule} from 'ng2-redux';
-import { ModalKhuvucComponent } from './components/partial/modal-khuvuc/modal-khuvuc.component';
 
 
 @NgModule({
@@ -156,7 +163,8 @@ import { ModalKhuvucComponent } from './components/partial/modal-khuvuc/modal-kh
     CreateTintucComponent,
     ThucphamchayComponent,
     YourPostsComponent,
-    ModalKhuvucComponent
+    ModalKhuvucComponent,
+    NuocgiaikhatComponent
   ],
   imports: [
     BrowserModule,

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit,OnDestroy {
         this.authServiceLogin.authenticateUser(user).subscribe(data=>{
           
           if(data.success){
-            this.authServiceLogin.storeUserData(data.token,data.userId, data.chucvu);
+            this.authServiceLogin.storeUserData(data.token,data.userId,data.username, data.chucvu);
             this.loginState.emit({login:true})
           }else{
             return false;

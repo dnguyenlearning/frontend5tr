@@ -18,6 +18,10 @@
             width: 270px;
             height: 270px;
         }
+        @media screen and (max-width: $breakpoint_1280){
+            width: 260px;
+            height: 260px;
+        }
 
         @media screen and (max-width: $breakpoint_1025){
             width: 350px;

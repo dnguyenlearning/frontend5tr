@@ -1,9 +1,9 @@
 export const environment = {
   production: true,
   facebook:{
-    appId:'156181431668843'
+    appId:'193476661237510'
   },
   google:{
-    clientId:'624845241699-1uc907m75bnof7oi0fdmv10q4fcknp7k.apps.googleusercontent.com'
+    clientId:'426705267572-honhpsvm4pb5rrkqf095vhdi5tjhf1b6.apps.googleusercontent.com'
   }
 };

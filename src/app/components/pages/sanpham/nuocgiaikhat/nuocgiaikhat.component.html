@@ -1,0 +1,12 @@
+<div id="sanpham-nuocgiaikhat">
+  <content [products]="nuocgiaikhatProductsNew | async" *ngIf="(nuocgiaikhatProductsNew | async).length && !loading"></content>
+  <div *ngIf="(nuocgiaikhatProductsNew | async).length==0 && !loading" fxLayoutAlign="center center">
+      <div class="noProduct" fxLayout="column" fxLayoutAlign="center center">
+          <h2>Hiện tại chưa có sản phẩm</h2>
+          <a routerLink="/">Về trang chủ</a>
+      </div>
+  </div>
+  <div class="loaderNuocgiaikhat" *ngIf="loading" fxLayout="row" fxLayoutAlign="center center">
+      <img src="assets/images/loader.gif" alt="">
+  </div>
+</div>

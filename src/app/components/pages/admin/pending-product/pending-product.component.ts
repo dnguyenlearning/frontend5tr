@@ -19,7 +19,7 @@ export class PendingProductComponent implements OnInit,OnDestroy {
   loaisanphams:any=[];
   pendingSanpham:any[]=[];
   loading:boolean=true;
-  title=['Rau Sạch', 'Trái Cây', 'Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay'];
+  title=['Rau Sạch', 'Trái Cây', 'Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay','Nước Giải Khát'];
   totalSubscription:Subscription;
   constructor(
     private loaisanphamService:LoaisanphamService,

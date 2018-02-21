@@ -12,7 +12,7 @@ import { IAppState } from '../../../store/store';
 })
 export class SanphamComponent implements OnInit, OnDestroy {
   loaisanphams:any=[];
-  title=['Rau Sạch', 'Trái Cây', 'Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay'];
+  title=['Rau Sạch', 'Trái Cây', 'Gia Súc Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay','Nước Giải Khát'];
   getSanphamSubscription:Subscription;
   constructor(
     private loaisanphamService:LoaisanphamService,

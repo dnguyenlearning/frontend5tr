@@ -21,7 +21,7 @@ export class AdminProductDetailComponent implements OnInit,OnDestroy {
   }
   product:Object;
   selectedIcon:string;
-  icons=['envira','apple','android','paw','snowflake-o'];
+  icons=['envira','apple','android','paw','snowflake-o','coffee'];
   postId:string;
   loading:boolean=true;
   appState:Observable<any>;

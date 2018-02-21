@@ -6,8 +6,15 @@
       <router-outlet></router-outlet>
   </div>
 </div>
-<div *ngIf="user" class="taosanpham">
-  <a routerLink="/sanpham/taosanpham"><img src="assets/images/taosanpham2@2x.png" alt=""></a>
+<div class="taosanpham">
+  <div *ngIf="user" class="tao">
+      <a routerLink="/sanpham/taosanpham"><img src="assets/images/taosanpham2@2x.png" alt=""></a>
+  </div>
+  <div class="hotline">
+      <img src="assets/images/hotline.png" alt="">
+  </div>
+  
+
 </div>
 
 <login @login *ngIf="showLogin"></login>

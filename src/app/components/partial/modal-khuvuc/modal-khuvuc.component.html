@@ -1,6 +1,6 @@
 <div id="modal-khuvuc" fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="center center">
   <img src="assets/images/showFooter@2x.png" alt="logo">
-  <h3>Vui Lòng Chọn Khu Vực Bạn Sinh Sống</h3>
+  <h2>Khu Vực</h2>
   <select #tinhthanh (change)="khuvucChanged(tinhthanh)">
     <option [selected]="(khuvuc | async) == 'tatca'" value="tatca">Toàn Quốc</option>
     <option *ngFor="let tinh of tinhs" [selected]="(khuvuc | async) == tinh" [value]="tinh">{{tinh}}</option>

@@ -17,7 +17,7 @@ export class FormCreateProductComponent implements OnInit, OnDestroy {
   productForm;
   errorUpload: string;
   errorTaoSanpham: string;
-  donviValue = ['kg', 'con'];
+  donviValue = ['kg', 'con','chai'];
 
   allowSubmit:boolean=false;
   //upload
@@ -30,11 +30,11 @@ export class FormCreateProductComponent implements OnInit, OnDestroy {
   loaisanphams=[];
   loading:boolean=false;
   btnDisabled:boolean=false;
-  titleSelect=['Rau Sạch', 'Trái Cây', 'Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay'];
+  titleSelect=['Rau Sạch', 'Trái Cây', 'Gia Súc Gia Cầm',' Thuỷ Sản','Thực Phẩm Chay','Nước Giải Khát'];
   tinhs=['An Giang','Bà Rịa-Vũng Tàu','Bạc Liêu','Bắc Kạn','Bắc Giang','Bắc Ninh','Bến Tre','Bình Dương',
     'Bình Định','Bình Phước','Bình Thuận','Cà Mau','Cao Bằng','Cần Thơ','Đà Nẵng','Đắk Lắk','Đắk Nông',
     'Điện Biên','Đồng Nai','Đồng Tháp','Gia Lai','Hà Giang','Hà Nam','Hà Nội','Hà Tây','Hà Tĩnh','Hải Dương',
-    'Hải Phòng','Hòa Bình','Hồ Chí Minh','Hậu Giang','Hưng Yên','Khánh Hòa','Kiên Giang','Kon Tum','Lai Châu','Lào Cai',
+    'Hải Phòng','Hòa Bình','TP Hồ Chí Minh','Hậu Giang','Hưng Yên','Khánh Hòa','Kiên Giang','Kon Tum','Lai Châu','Lào Cai',
     'Lạng Sơn','Lâm Đồng','Long An','Nam Định','Nghệ An','Ninh Bình','Ninh Thuận','Phú Thọ','Phú Yên','Quảng Bình',
     'Quảng Nam','Quảng Ngãi','Quảng Ninh','Quảng Trị','Sóc Trăng','Sơn La','Tây Ninh','Thái Bình','Thái Nguyên',
     'Thanh Hóa','Thừa Thiên - Huế','Tiền Giang','Trà Vinh','Tuyên Quang','Vĩnh Long','Vĩnh Phúc','Yên Bái'
@@ -60,6 +60,7 @@ export class FormCreateProductComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.tinhs=this.tinhs.sort();
     this.loaisanphamSubscription=this.loaisanphamService.getTatcaSanpham().subscribe(data=>{
       if(data.success){
         this.loaisanphams=data.loaisanphams;
@@ -102,6 +103,7 @@ export class FormCreateProductComponent implements OnInit, OnDestroy {
 
 
     newProduct.nguoidang=localStorage.getItem('greenfood_userId');
+    newProduct.nameNguoidang=localStorage.getItem('greenfood_username');
     newProduct.loaisanpham = loaisanpham.value;
     newProduct.donvi = donvi.value;
     newProduct.xuatxu = xuatxu.value;
